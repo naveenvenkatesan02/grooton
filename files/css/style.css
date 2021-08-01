@@ -1,0 +1,16 @@
+table{
+	border-collapse: collapse;
+	width:100%;
+	text-align:center;
+}
+th{
+	background-color: dimgray;
+	color:dimblack;
+}
+th,td{
+	border:2px solid #ddd;
+	padding:15px;
+}
+h1{
+	text-align:center;
+}

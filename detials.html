@@ -1,0 +1,114 @@
+<html>
+<title>Database</title>
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	td {
+		border: 2px solid #ddd;
+		padding: 15px;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	button {
+		font-size: 16px;
+	}
+
+	.prev-button {
+		margin-top: 20px;
+		padding-left: 300px;
+	}
+
+	.next-button {
+		margin-top: -15px;
+		padding-left: 1000px;
+	}
+	.home-button{
+		margin-top: -15px;
+		padding-left:610px;
+		}	
+</style>
+<script>
+	function next() {
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const params = Object.fromEntries(urlSearchParams.entries());
+		const myJson = JSON.parse(localStorage.getItem("listUser"))[params.id];
+	}
+	function previous() {
+
+	}
+	function loadDetails() {
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const params = Object.fromEntries(urlSearchParams.entries());
+		var list = JSON.parse(localStorage.getItem("listUser"));
+		const myJson = list[params.id];
+		var table = "<table>";
+		table += "<tr>";
+		table += "<td> Name </td>";
+		table += "<td>" + myJson.name + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> Age </td>";
+		table += "<td>" + myJson.age + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> DOB </td>";
+		table += "<td>" + myJson.dob + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> First Name </td>";
+		table += "<td>" + myJson.firstName + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> Last Name </td>";
+		table += "<td>" + myJson.lastName + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> Address </td>";
+		table += "<td>" + myJson.more.address_line1 + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "<td> Phone </td>";
+		table += "<td>" + myJson.more.phone + "</td>";
+		table += "</tr>";
+		table += "<tr>";
+		table += "</table>"
+		document.getElementById("container").innerHTML = table;
+		console.log(params.id);
+		console.log(list.length)
+		console.log(params.id != list.length - 1)
+		document.getElementById("home").innerHTML = `<a href="database.html?id=${Number(params.id) - 1}">Home</a>`
+		if (params.id != 0) {
+			document.getElementById("prev").innerHTML = `<a href="detials.html?id=${Number(params.id) - 1}">Previous</a>`
+		}
+		if (params.id != list.length - 1) {
+			document.getElementById("next").innerHTML = `<a href="detials.html?id=${Number(params.id) + 1}">Next</a>`	
+		}
+		
+		
+	}
+</script>
+
+<body onload="loadDetails()">
+	<h1>Database</h1>
+	<div class="detials-tabel" id="container">
+	</div>
+	<div class="prev-button" id="prev">
+	</div>
+	<div class="next-button" id="next">
+	</div>
+	<div class="home-button" id="home">
+	</div>
+
+
+</body>
+
+</html>
