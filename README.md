@@ -15,10 +15,10 @@ Tools Used
 
 Instruction
 -----
-1. First a login page appears. I have created the login and registration as dummy. So you can give any mail id and password to login and see the users list.
+1. First a login page appears. I have created the login and registration page as dummy. So you can give any mail id and password to login and see the users list.
 2. After login you will see a users list page. There you can see the users minimum detials.
-3. To know more detials about the user click on view detials which is located at last column of the user.
-4. When view detials is clicked a database page will be open. There you can see more detials of the user.
+3. To know more detials about the user click on the view detials which is located at last column of the user.
+4. When view detials is clicked a database page will be opened. There you can see more detials of the user.
 5. From database page you can view next or previous user's detials by clicking Previous and Next button. You can also go back to home by clicking Home button.
 6. After viewing the detials you can logout the account from home page.
 
@@ -35,4 +35,5 @@ Important Note
 -----
 Per day only 50 requests can be send by using beeceptor API. So if the user detials are not displayed then the request is reached the limit.
 
-                                                                                                                            -Naveen Venkatesan
+-----
+                                                                                                   -Naveen Venkatesan
